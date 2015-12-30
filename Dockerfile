@@ -8,6 +8,6 @@ RUN apt-get -y update && apt-get install -y fortunes
 
 # CMD: runs command
 # this command tells fortune to send quotes to cowsay
-CMD/usr/games/fortune -a | cowsay
+CMD /usr/games/fortune -a | cowsay
 
 
