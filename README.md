@@ -1,9 +1,20 @@
+Quick commands:
+- docker images : displays list of images in local system.
+- docker build -t [build-name] .  : builds images
+- docker push [username/repo_name]
+- docker pull [username/repo_name]
+- docker rm $(docker ps -a -q) : destroys all containers
+- docker rmi $(docker images -q) : destroys all images
+
 [
 'sudo' has to be prepended to run docker commands as docker needs to run as superuser to create TCP connections.
+
 Adding it to a (trusted) privileged user group is a security concern, as it does not prompt for password to run commands.
+
 So in the below commands, docker stands for sudo docker (aliased within bash)
 ]
-Basic Docker Project (following tutorial):
+
+### Basic Docker Project (following tutorial):
 
 1. Install docker
 2. Run command: 
@@ -19,6 +30,7 @@ Docker will run the image and exit.
 4. Run command: nano Dockerfile
 
 5. Copied following commands to insert into Dockerfile
+
 FROM docker/whalesay:latest
 RUN apt-get -y update && apt-get install -y fortunes
 CMD /usr/games/fortune -a | cowsay
@@ -56,9 +68,3 @@ docker rmi -f [Image ID/image name]
 
 ### Note:
 Dockerfile: file that specifies container config and commands to be run on 'docker run'.
-
-Quick commands:
-- docker images: displays list of images in local system.
-- docker push [username/repo_name]
-- docker pull [username/repo_name]
-
